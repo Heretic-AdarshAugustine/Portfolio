@@ -1,0 +1,465 @@
+:root {
+  --c-purple: #3c2189;
+  --c-purple-deep: #34168f;
+  --c-purple-bar: #402586;
+  --c-purple-label: #402288;
+  --c-purple-bg: #f1f0f8;
+  --c-purple-bg-soft: #f2eef9;
+  --c-purple-bg-faint: #fbfafc;
+  --c-purple-border: #f2f1f5;
+  --c-outcome-bg: #331e6a;
+  --c-gray-text: #9b9898;
+  --c-green: #3d9766;
+  --c-blue: #326ab7;
+}
+
+.career-page { background: #fff; }
+
+/* ---------- Hero ---------- */
+
+.career-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.career-hero__content {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.career-hero__title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--c-purple);
+  margin: 0;
+}
+
+.career-hero__rule { width: 85px; height: 2px; display: block; background: var(--c-purple); border: none; margin: 0; }
+
+.career-hero__subtitle { font-size: 20px; font-weight: 500; margin: 0; }
+
+.career-hero__logo { height: 46px; width: auto; aspect-ratio: 377 / 93; align-self: flex-start; display: block; margin-top: 4px; }
+
+.career-hero__img { width: 588px; max-width: 46%; height: auto; display: block; }
+
+/* ---------- Stats strip ---------- */
+
+.career-stats {
+  max-width: 1095px;
+  margin: 40px auto 0;
+  background: #fff;
+  border: 1px solid #ced7d7;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.career-stats__item {
+  flex: 1 1 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 16px;
+  border-right: 1px solid #e2e3e3;
+  text-align: center;
+}
+
+.career-stats__item:last-child { border-right: none; }
+.career-stats__item img { width: 40px; height: 40px; object-fit: contain; }
+
+.career-stats__label {
+  display: block;
+  color: var(--c-purple-label);
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.career-stats__value { display: block; font-size: 14px; color: #000; margin-top: 2px; }
+
+/* ---------- Content shell ---------- */
+
+.career-content {
+  max-width: 944px;
+  margin: 0 auto;
+  padding: 88px 24px 0;
+  color: #000;
+}
+
+.career-content > section { margin-bottom: 88px; }
+.career-content > section:last-child { margin-bottom: 0; }
+
+.career-eyebrow {
+  color: var(--c-purple);
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
+/* ---------- The problem ---------- */
+
+.career-problem__body {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.career-problem__visual {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 10px;
+}
+
+.career-problem__student { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.career-problem__student img { width: 66px; height: auto; aspect-ratio: 73 / 92; flex-shrink: 0; }
+.career-problem__student span { font-size: 12px; }
+
+.career-problem__diagram { width: 100%; max-width: 420px; height: auto; display: block; }
+
+.career-problem__text { flex: 1 1 0; display: flex; flex-direction: column; gap: 35px; }
+.career-problem__text p { margin: 0 0 8px; font-size: 16px; line-height: 1.5; }
+.career-problem__text p:last-child { margin-bottom: 0; }
+
+.career-callout {
+  background: var(--c-purple-bg);
+  border-left: 3px solid var(--c-purple-deep);
+  border-radius: 5px;
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Why this matters ---------- */
+
+.career-matters__intro { font-size: 16px; line-height: 1.5; margin: 0 0 24px; }
+
+.career-metrics {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.career-metric-card {
+  background: var(--c-purple-bg-faint);
+  border: 1px solid var(--c-purple-border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.career-donut {
+  width: 141px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.career-donut__ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(var(--c-purple) calc(var(--pct) * 1%), #d9d9d9 0);
+}
+
+.career-donut__ring span {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--c-purple-bg-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--c-purple);
+}
+
+.career-donut__label { font-size: 13px; text-align: center; margin: 0; }
+.career-donut__source { font-size: 14px; font-weight: 500; color: var(--c-purple); text-align: center; margin: 0; }
+
+.career-metric-divider { width: 1px; align-self: stretch; background: #d9d9d9; border: none; }
+
+.career-metric-list {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.career-metric-list h4 { font-size: 16px; font-weight: 500; text-align: center; margin: 0 0 4px; }
+
+.career-metric-row { display: flex; align-items: center; gap: 8px; }
+.career-metric-row img { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+.career-metric-row span { font-weight: 500; color: var(--c-purple); font-size: 16px; }
+
+.career-compare {
+  flex: 1 1 380px;
+  background: var(--c-purple-bg-faint);
+  border: 1px solid var(--c-purple-border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.career-compare h4 { font-size: 16px; font-weight: 500; text-align: center; margin: 0; }
+
+.career-compare__row { display: flex; align-items: center; gap: 12px; }
+.career-compare__name { flex: 0 0 130px; font-size: 14px; font-weight: 500; color: var(--c-purple); }
+.career-compare__track { flex: 1 1 0; display: flex; align-items: center; gap: 10px; }
+.career-compare__bar { height: 24px; border-radius: 100px; }
+.career-compare__pct { font-size: 16px; white-space: nowrap; }
+
+.career-compare__source { font-size: 12px; color: var(--c-gray-text); text-align: center; margin: 0; }
+
+/* ---------- Research focus / objectives / approach ---------- */
+
+.career-focus-banner {
+  background: var(--c-purple-bg-soft);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.career-focus-banner p { font-size: 24px; font-weight: 500; margin: 0; flex: 1 1 0; }
+.career-focus-banner img { width: 100px; height: auto; aspect-ratio: 119 / 97; flex-shrink: 0; }
+
+.career-objectives-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.career-objective {
+  background: var(--c-purple-bg);
+  border-left: 4px solid var(--c-purple-deep);
+  border-radius: 5px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.career-objective p { font-size: 20px; font-weight: 500; margin: 0; }
+
+.career-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.career-approach-card {
+  border: 1px solid var(--c-purple-border);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.career-approach-card img { width: 60px; height: 60px; object-fit: contain; }
+.career-approach-card h4 { font-size: 16px; font-weight: 500; color: var(--c-purple-label); text-transform: uppercase; margin: 0; }
+.career-approach-card p { font-size: 16px; margin: 0; }
+
+/* ---------- Survey findings ---------- */
+
+.career-survey__intro { font-size: 16px; line-height: 1.5; margin: 0 0 16px; }
+
+.career-survey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.career-finding h4 { font-size: 18px; font-weight: 500; text-transform: uppercase; margin: 0 0 16px; }
+.career-finding > p { font-size: 16px; line-height: 1.4; margin: 0 0 16px; }
+
+.career-stat-block {
+  background: rgba(243, 246, 251, 0.3);
+  border-left: 1px solid #f3f6fb;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.career-insight-row {
+  background: var(--c-purple-bg);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.career-insight-row img { width: 60px; height: 60px; object-fit: contain; flex-shrink: 0; }
+.career-insight-row p { font-size: 16px; margin: 0; line-height: 1.3; }
+
+.career-survey-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.career-bar-list {
+  background: rgba(243, 246, 251, 0.3);
+  border-left: 1px solid #f3f6fb;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.career-bar-row { display: flex; align-items: center; gap: 24px; }
+.career-bar-row__name { flex: 0 0 133px; font-size: 16px; }
+.career-bar-row__track { flex: 1 1 0; display: flex; align-items: center; gap: 24px; }
+.career-bar-row__fill { height: 24px; background: var(--c-purple-bar); }
+.career-bar-row__pct { font-size: 16px; white-space: nowrap; }
+
+/* ---------- Interview findings ---------- */
+
+.career-interview__intro { font-size: 16px; line-height: 1.5; margin: 0 0 16px; }
+
+.career-quote-block { display: flex; flex-direction: column; gap: 16px; }
+
+.career-quote-row { display: flex; gap: 24px; align-items: stretch; }
+.career-quote-row__text { flex: 1 1 0; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.career-quote-row__text h4 { font-size: 18px; font-weight: 500; text-transform: capitalize; margin: 0; }
+.career-quote-row__text p { font-size: 16px; line-height: 1.4; margin: 0; }
+
+.career-quote {
+  flex: 1 1 0;
+  background: var(--c-purple-bg);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.career-quote img { width: 25px; height: auto; aspect-ratio: 24.708 / 16.588; flex-shrink: 0; }
+.career-quote p { font-size: 16px; font-style: italic; margin: 0; line-height: 1.3; }
+
+/* ---------- Strategic opportunities ---------- */
+
+.career-opportunities__intro { font-size: 16px; line-height: 1.5; margin: 0 0 24px; }
+
+.career-opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.career-opportunity h4 { font-size: 18px; font-weight: 500; text-transform: capitalize; margin: 0 0 16px; }
+.career-opportunity p { font-size: 16px; line-height: 1.4; margin: 0; }
+
+/* ---------- Outcome banner ---------- */
+
+.career-outcome {
+  background: var(--c-outcome-bg);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  color: #fff;
+}
+
+.career-outcome .career-eyebrow { color: #fff; margin-bottom: 16px; }
+.career-outcome__text { max-width: 398px; display: flex; flex-direction: column; gap: 34px; }
+.career-outcome__lead { font-size: 18px; margin: 0; }
+
+.career-outcome__checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.career-outcome__checklist li { display: flex; align-items: center; gap: 24px; font-size: 18px; }
+.career-outcome__checklist img { width: 24px; height: 24px; flex-shrink: 0; }
+
+.career-outcome__img { width: 326px; max-width: 40%; height: auto; display: block; flex-shrink: 0; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 960px) {
+  .career-hero { flex-direction: column; padding: 24px 24px 0; text-align: center; }
+  .career-hero__content { align-items: center; max-width: none; }
+  .career-hero__rule { margin: 0 auto; }
+  .career-hero__title { font-size: 28px; }
+  .career-hero__img { max-width: 80%; }
+
+  .career-stats { margin-top: 24px; }
+
+  .career-content { padding: 56px 20px 0; }
+  .career-content > section { margin-bottom: 56px; }
+
+  .career-problem__body { flex-direction: column; }
+
+  .career-metrics { flex-direction: column; }
+  .career-metric-divider { display: none; }
+
+  .career-focus-banner { flex-direction: column; text-align: center; }
+
+  .career-objectives-grid { grid-template-columns: 1fr; }
+  .career-approach-grid { grid-template-columns: 1fr 1fr; }
+
+  .career-survey-grid { grid-template-columns: 1fr; }
+  .career-survey-bottom { grid-template-columns: 1fr; }
+
+  .career-quote-row { flex-direction: column; }
+
+  .career-opportunities-grid { grid-template-columns: 1fr; }
+
+  .career-outcome { flex-direction: column; text-align: center; padding: 24px; }
+  .career-outcome__checklist li { justify-content: center; }
+  .career-outcome__img { max-width: 60%; }
+}
+
+@media (max-width: 480px) {
+  .career-hero__title { font-size: 22px; }
+  .career-hero__img { max-width: 100%; }
+
+  .career-content { padding: 40px 16px 0; }
+  .career-content > section { margin-bottom: 40px; }
+
+  .career-approach-grid { grid-template-columns: 1fr; }
+  .career-metric-card { flex-direction: column; }
+  .career-compare__row { flex-wrap: wrap; }
+  .career-compare__name { flex-basis: 100%; }
+
+  .career-quote-row__text { text-align: center; }
+  .career-quote { flex-direction: column; text-align: center; }
+
+  .career-outcome__checklist li { flex-direction: column; gap: 8px; text-align: center; }
+}
