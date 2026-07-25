@@ -1,14 +1,41 @@
 :root {
-  --cream: #fcf4e6;
-  --cream-light: #faf6eb;
-  --accent: #be702d;
-  --accent-border: #bf702c;
-  --text-muted: rgba(0, 0, 0, 0.72);
-  --works-title: #910909;
-  --tag-bg: #f2f2f6;
-  --tag-text: #374460;
-  --btn-border: #bebbb4;
-  --btn-text: #4f4f4f;
+  /* Color */
+  --bezel: #FFD84F;
+  --canvas: #FDF7EC;
+  --surface: #FFFFFF;
+  --ink: #2B2A29;
+  --ink-soft: #6B645C;
+  --amber: #F5A623;
+  --sky: #5EB8E4;
+  --lilac: #9B8CF0;
+  --coral: #F58BA0;
+
+  /* Legacy aliases kept so nothing across the shared stylesheet silently
+     falls back to an un-themed default; every one of these now resolves
+     to a token above instead of a hard-coded hex value. */
+  --cream: var(--canvas);
+  --cream-light: var(--surface);
+  --accent: var(--ink);
+  --accent-border: var(--ink);
+  --text-muted: var(--ink-soft);
+  --works-title: var(--ink);
+  --tag-bg: var(--sky);
+  --tag-text: var(--ink);
+  --btn-border: var(--ink);
+  --btn-text: var(--ink);
+
+  /* Type */
+  --font-display: 'Cabinet Grotesk', 'Plus Jakarta Sans', 'Poppins', system-ui, sans-serif;
+  --font-body: 'Satoshi', Inter, system-ui, sans-serif;
+  --font-wordmark: 'Gilda Display', serif;
+
+  /* Shape */
+  --r-card: 22px;
+  --r-image: 21px; /* hero illustrations keep their current radius, not the 16px in the brief's shape block — see note */
+  --r-arch: 999px 999px 16px 16px;
+  --r-button: 4px;
+  --hairline: 1px solid rgba(43, 42, 41, 0.12);
+  --shadow: 0 12px 32px -12px rgba(43, 42, 41, 0.18);
 }
 
 * { box-sizing: border-box; }
@@ -17,9 +44,11 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--cream);
-  font-family: 'Work Sans', sans-serif;
-  color: #000;
+  background: var(--canvas);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
   overflow-x: hidden;
 }
 
@@ -29,9 +58,9 @@ a { text-decoration: none; color: inherit; }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: var(--r-button);
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -68,15 +97,16 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(252, 244, 230, 0.75);
+  background: rgba(253, 247, 236, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border-bottom: var(--hairline);
   transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .nav.is-scrolled {
-  background: rgba(252, 244, 230, 0.95);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  background: rgba(253, 247, 236, 0.95);
+  box-shadow: var(--shadow);
 }
 
 .nav--hidden {
@@ -105,6 +135,11 @@ button:focus-visible {
   transition: d 0.65s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+.nav__logo:hover .logo-icon-path-1 { d: path("M32.9357 33.192L18.729 0L15.8146 6.8735L30.4994 39.8794L32.9357 33.192Z"); }
+.nav__logo:hover .logo-icon-path-2 { d: path("M0 32.9089L2.484 39.9589L9.24 23.233L6.3908 16.7223L0 32.9089Z"); }
+.nav__logo:hover .logo-icon-path-3 { d: path("M20.8086 17.9333L23.1369 23.1166L9.0595 23.1166L6.7298 17.9333L20.8086 17.9333Z"); }
+.nav__logo:hover .logo-icon-path-4 { d: path("M18.7157 0.008L13.0321 0.008L5.9019 17.9725L11.43 17.9725L18.7157 0.008Z"); }
+
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -124,18 +159,13 @@ button:focus-visible {
   width: 22px;
   height: 2px;
   border-radius: 2px;
-  background: #000;
+  background: var(--ink);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-.nav__logo:hover .logo-icon-path-1 { d: path("M32.9357 33.192L18.729 0L15.8146 6.8735L30.4994 39.8794L32.9357 33.192Z"); }
-.nav__logo:hover .logo-icon-path-2 { d: path("M0 32.9089L2.484 39.9589L9.24 23.233L6.3908 16.7223L0 32.9089Z"); }
-.nav__logo:hover .logo-icon-path-3 { d: path("M20.8086 17.9333L23.1369 23.1166L9.0595 23.1166L6.7298 17.9333L20.8086 17.9333Z"); }
-.nav__logo:hover .logo-icon-path-4 { d: path("M18.7157 0.008L13.0321 0.008L5.9019 17.9725L11.43 17.9725L18.7157 0.008Z"); }
 
 .nav__links {
   display: flex;
@@ -144,10 +174,16 @@ button:focus-visible {
 }
 
 .nav__links a {
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
   padding: 10px;
   position: relative;
-  transition: color 0.3s ease, transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: color 0.2s ease;
+}
+
+.nav__links a:not(.btn) {
+  color: var(--ink-soft);
 }
 
 .nav__links a:not(.btn)::after {
@@ -157,7 +193,7 @@ button:focus-visible {
   right: 10px;
   bottom: 6px;
   height: 2px;
-  background: var(--accent);
+  background: var(--ink);
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: center;
@@ -165,7 +201,7 @@ button:focus-visible {
 }
 
 .nav__links a:not(.btn):hover {
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .nav__links a:not(.btn):hover::after {
@@ -178,15 +214,15 @@ button:focus-visible {
 
 .btn {
   display: inline-block;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: var(--r-button);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
   text-align: center;
-  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.4s ease, filter 0.2s ease;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.4s ease, filter 0.2s ease, background-color 0.2s ease;
   will-change: transform;
 }
 
-/* Tilt motion comes from initTilt() in script.js; the shadow here just
-   grounds it, deepening slightly as the button "lifts" toward the cursor. */
 .btn:hover {
   box-shadow: 0 14px 22px rgba(0, 0, 0, 0.16);
 }
@@ -196,77 +232,93 @@ button:focus-visible {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.14);
 }
 
+.btn--resume,
+.btn--cta,
+.btn--send {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.btn--resume:hover,
+.btn--cta:hover,
+.btn--send:hover {
+  filter: brightness(0.92);
+}
+
 .btn--resume {
-  background: var(--accent);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  padding: 10px;
+  padding: 10px 16px;
 }
 
 .btn--cta {
-  background: var(--accent);
-  color: #fff;
   font-size: clamp(16px, 10.667px + 1.667vw, 24px);
   padding: 16px clamp(16px, 5.333px + 3.333vw, 32px);
-  border-radius: 8px;
 }
 
 /* ---------- Hero ---------- */
 
 .hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
 }
 
+/* Five-photo cluster, matching the Figma desktop hero (node 865:278)
+   exactly: one fixed-aspect stage, each photo absolutely positioned by
+   the percentages Figma reports, so it scales as a unit at any width. */
 .hero__cluster {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-bottom: 24px;
+  position: relative;
+  width: 100%;
+  max-width: 1018px;
+  aspect-ratio: 1017.81 / 442.32;
+  margin: 0 auto 24px;
 }
 
 .hero-photo-wrap {
+  position: absolute;
   perspective: 800px;
 }
 
-.hero-photo-wrap--left { margin-top: 80px; margin-right: -40px; z-index: 1; }
-.hero-photo-wrap--right { margin-top: 78px; margin-left: -40px; z-index: 1; }
-.hero-photo-wrap--center { z-index: 2; }
+.hero-photo-wrap--far-left { left: 0%; top: 41.73%; width: 23.08%; z-index: 1; }
+.hero-photo-wrap--left { left: 14.98%; top: 18.41%; width: 25.31%; z-index: 2; }
+.hero-photo-wrap--center { left: 35.98%; top: 0%; width: 27.21%; z-index: 3; }
+.hero-photo-wrap--right { left: 59.08%; top: 18.05%; width: 25.71%; z-index: 2; }
+.hero-photo-wrap--far-right { left: 76.92%; top: 41.73%; width: 23.08%; z-index: 1; }
+
+/* Hovering any card brings it to the front of the stack — it never
+   moves from its spot, only its stacking order changes. */
+.hero-photo-wrap:hover { z-index: 10; }
 
 .hero__photo {
-  border-radius: 21px;
-  border: 6px solid #fff;
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-image);
+  border: 6px solid var(--surface);
   object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   display: block;
   transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.hero__photo--left {
-  width: 220px;
-  height: 253px;
-  transform: rotate(-8deg);
-}
+.hero__photo--far-left { aspect-ratio: 234.9 / 257.7; transform: rotate(-18deg); }
+.hero__photo--left { aspect-ratio: 257.6 / 295.5; transform: rotate(-8deg); }
 
 .hero__photo--center {
-  width: 277px;
-  height: 332px;
-  background: #f9ecd5;
+  aspect-ratio: 276.9 / 332.3;
+  background: var(--canvas);
   object-fit: contain;
   padding: 14px;
 }
 
-.hero__photo--right {
-  width: 224px;
-  height: 256px;
-  transform: rotate(9deg);
-}
+.hero__photo--right { aspect-ratio: 261.7 / 298.7; transform: rotate(9deg); }
+.hero__photo--far-right { aspect-ratio: 234.9 / 257.7; transform: rotate(18deg); }
 
+.hero-photo-wrap--far-left:hover .hero__photo--far-left { transform: rotate(-18deg) scale(1.04); }
 .hero-photo-wrap--left:hover .hero__photo--left { transform: rotate(-8deg) scale(1.04); }
 .hero-photo-wrap--center:hover .hero__photo--center { transform: scale(1.04); }
 .hero-photo-wrap--right:hover .hero__photo--right { transform: rotate(9deg) scale(1.04); }
+.hero-photo-wrap--far-right:hover .hero__photo--far-right { transform: rotate(18deg) scale(1.04); }
 
 .hero__title {
   width: 100%;
@@ -279,15 +331,16 @@ button:focus-visible {
 .hero__title path { fill: none; }
 
 .hero__title text {
-  font-family: 'Gilda Display', serif;
-  font-weight: 400;
-  font-size: clamp(30px, 19.65px + 3.235vw, 52px);
-  fill: #000;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  letter-spacing: -0.03em;
+  fill: var(--ink);
 }
 
 .hero__subtitle {
   font-size: clamp(16px, 12.24px + 1.1765vw, 24px);
-  color: var(--text-muted);
+  color: var(--ink-soft);
   margin: 0 0 clamp(16px, 10.667px + 1.667vw, 24px);
   text-align: center;
   line-height: 1.5;
@@ -297,6 +350,7 @@ button:focus-visible {
 /* ---------- Selected works ---------- */
 
 .works {
+  position: relative;
   padding: 80px;
   display: flex;
   flex-direction: column;
@@ -305,10 +359,12 @@ button:focus-visible {
 }
 
 .works__title {
-  color: var(--works-title);
-  font-weight: 400;
-  font-size: 30px;
-  text-transform: uppercase;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   text-align: center;
   margin: 0;
   width: 100%;
@@ -329,8 +385,8 @@ button:focus-visible {
 }
 
 .card {
-  background: #fff;
-  border-radius: 25px;
+  background: var(--surface);
+  border-radius: var(--r-card);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -342,7 +398,7 @@ button:focus-visible {
 .card-wrap:hover .card {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.8),
-    0 0 30px 4px rgba(190, 112, 45, 0.18),
+    0 0 30px 4px rgba(43, 42, 41, 0.18),
     0 30px 45px rgba(0, 0, 0, 0.18);
 }
 
@@ -368,31 +424,47 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
 }
 
 .card__tag {
   align-self: flex-start;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  font-size: 16px;
-  padding: 10px 13px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  padding: 8px 14px;
   border-radius: 50px;
 }
 
+.card--sky .card__tag { background: rgba(94, 184, 228, 0.18); }
+.card--amber .card__tag { background: rgba(245, 166, 35, 0.18); }
+.card--lilac .card__tag { background: rgba(155, 140, 240, 0.18); }
+.card--teal .card__tag { background: rgba(23, 52, 61, 0.14); }
+
 .card__desc {
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--ink);
   margin: 0;
 }
 
 .card__btn {
   display: block;
   text-align: center;
-  color: var(--btn-text);
-  font-size: 16px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
   padding: 10px;
-  border-radius: 42px;
-  border: 1px solid var(--btn-border);
+  border-radius: var(--r-button);
+  border: var(--hairline);
   position: relative;
   overflow: hidden;
   z-index: 0;
@@ -403,7 +475,7 @@ button:focus-visible {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--accent-border);
+  background: var(--ink);
   transform: scaleX(0);
   transform-origin: left;
   z-index: -1;
@@ -411,10 +483,10 @@ button:focus-visible {
 }
 
 .card__btn:hover {
-  color: #fff;
-  border-color: var(--accent-border);
+  color: var(--canvas);
+  border-color: var(--ink);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(191, 112, 44, 0.3);
+  box-shadow: var(--shadow);
 }
 
 .card__btn:hover::before {
@@ -423,17 +495,27 @@ button:focus-visible {
 
 .card__btn:active {
   transform: translateY(-1px) scale(0.97);
-  box-shadow: 0 4px 10px rgba(191, 112, 44, 0.3);
 }
 
 /* ---------- Contact / Footer ---------- */
 
 .contact {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 61px;
   padding: 80px 80px 24px;
+}
+
+.micro-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
 .contact__box {
@@ -443,16 +525,11 @@ button:focus-visible {
   gap: 24px;
   flex-wrap: wrap;
   width: 100%;
-  background: var(--cream-light);
-  border: 1px solid var(--accent-border);
-  border-radius: 24px;
+  background: var(--surface);
+  border: var(--hairline);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow);
   padding: 24px 40px;
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
-}
-
-.contact__box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(190, 112, 45, 0.15);
 }
 
 .contact__message {
@@ -464,8 +541,9 @@ button:focus-visible {
 .contact__icon { width: 58px; height: 46px; object-fit: contain; flex-shrink: 0; }
 
 .contact__text {
-  font-size: 16px;
-  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  color: var(--ink-soft);
   margin: 0;
   max-width: 300px;
 }
@@ -481,26 +559,24 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #f7eedf;
-  border-radius: 8px;
+  background: var(--canvas);
+  border-radius: var(--r-button);
   padding: 10px 24px;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.55);
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.contact__email:hover {
-  background: #f0e2c9;
-  transform: translateY(-2px);
+.contact__email span {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
 .contact__email-icon { width: 24px; height: 23px; object-fit: contain; }
 
 .btn--send {
-  background: var(--accent-border);
-  color: #fff;
-  font-family: Optima, Candara, Calibri, serif;
-  text-transform: capitalize;
   padding: 10px 24px;
   display: flex;
   align-items: center;
@@ -539,8 +615,12 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
 .contact__copy-icon { width: 12px; height: 12px; object-fit: contain; }
@@ -549,39 +629,20 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 24px;
-  font-family: Optima, Candara, Calibri, serif;
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink-soft);
 }
 
 .contact__social a {
   position: relative;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.contact__social a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -3px;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
 }
 
 .contact__social a:hover {
-  color: var(--accent-border);
-}
-
-.contact__social a:hover::after {
-  transform: scaleX(1);
-}
-
-.contact__social a:active {
-  transform: scale(0.94);
+  color: var(--ink);
 }
 
 /* ---------- Responsive ---------- */
@@ -624,22 +685,24 @@ button:focus-visible {
     align-items: stretch;
     gap: 4px;
     padding: 12px 16px 16px;
-    background: var(--cream-light);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    background: var(--surface);
+    box-shadow: var(--shadow);
   }
   .nav__links.is-open { display: flex; }
   .nav__links a { text-align: center; padding: 12px; }
   .nav__links a.btn--resume { margin-top: 4px; }
 
-  .hero { padding: 20px 24px 8px; }
+  .hero { padding: 36px 24px 8px; }
 
   .hero__cluster {
     position: relative;
     width: 100%;
-    max-width: 300px;
+    max-width: 230px;
     aspect-ratio: 352 / 252;
-    margin: 0 auto 8px;
+    margin: 0 auto 32px;
   }
+  .hero-photo-wrap--far-left,
+  .hero-photo-wrap--far-right { display: none; }
   .hero-photo-wrap--left { position: absolute; top: 14%; left: -3%; width: 50%; margin: 0; }
   .hero-photo-wrap--center { position: absolute; top: 0; left: 24.3%; width: 52%; margin: 0; }
   .hero-photo-wrap--right { position: absolute; top: 14%; left: 53%; width: 50%; margin: 0; }
@@ -651,11 +714,13 @@ button:focus-visible {
   .hero__photo--center { aspect-ratio: 184 / 249; padding: 8px; }
 
   .works { padding: 32px 24px; gap: 24px; }
-  .works__title { font-size: 24px; }
 
   .contact { padding: 32px 24px 24px; }
   .contact__box { padding: 20px; }
   .contact__message { flex-direction: row; text-align: left; }
+  .contact__email { display: none; }
+  .contact__actions { width: 100%; }
+  .btn--send { width: 100%; justify-content: center; padding: 14px 24px; }
   .contact__bottom { flex-direction: row; text-align: left; }
   .contact__social { gap: 16px; }
 }
