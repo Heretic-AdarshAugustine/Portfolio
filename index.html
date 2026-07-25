@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adarsh Augustine — UX Designer / Illustrator / Researcher</title>
+<title>Ortus — Child Care App Case Study | Adarsh Augustine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Gilda+Display&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500&family=Playpen+Sans:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="ortus.css">
 </head>
-<body>
+<body class="ortus-page">
 
 <header class="nav">
   <svg class="nav__logo nav__logo--mark" viewBox="0 0 32.9357 39.9509" fill="none" role="img" aria-label="Adarsh Augustine" xmlns="http://www.w3.org/2000/svg">
@@ -47,81 +48,312 @@
     <span></span><span></span><span></span>
   </button>
   <nav class="nav__links" id="nav-links">
-    <a href="#work">Work</a>
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
     <a href="about.html">About</a>
-    <a href="https://www.linkedin.com/in/adarsh-augustine-ux" target="_blank" rel="noopener">Linkedin</a>
-    <a href="https://docs.google.com/document/d/17h42TiYOHcUaAq26e9CIxp-ldGM8yglsutl0dhBler0/edit?usp=sharing" class="btn btn--resume" target="_blank" rel="noopener">Résumé</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero__cluster">
-    <div class="hero-photo-wrap hero-photo-wrap--left">
-      <img class="hero__photo hero__photo--left" src="assets/photo-ramen2.png" alt="">
-    </div>
-    <div class="hero-photo-wrap hero-photo-wrap--center">
-      <img class="hero__photo hero__photo--center" src="assets/hero-desk-v2.png" alt="Illustration of Adarsh at his desk, illustrating and designing">
-    </div>
-    <div class="hero-photo-wrap hero-photo-wrap--right">
-      <img class="hero__photo hero__photo--right" src="assets/photo-ramen2.png" alt="">
-    </div>
+<header class="ortus-hero">
+  <img class="ortus-hero__img" src="assets/ortus/hero-bg.png" alt="Ortus — Nurturing Growth Together. A Child Care App.">
+</header>
+
+<div class="ortus-stats">
+  <div class="ortus-stats__item">
+    <img src="assets/ortus/icon-role.svg" alt="">
+    <div><span class="ortus-stats__label">Role</span><span class="ortus-stats__value">UX Designer / Researcher</span></div>
   </div>
-
-  <svg class="hero__title" viewBox="0 0 760 150" aria-label="Hi, I'm Adarsh">
-    <path id="titleCurve" d="M 20,120 Q 380,30 740,120" fill="none" />
-    <text text-anchor="middle">
-      <textPath href="#titleCurve" startOffset="50%">Hi, I&#8217;m Adarsh</textPath>
-    </text>
-  </svg>
-  <p class="hero__subtitle">I'm a UX designer and illustrator based in Canada,<br>I design clarity into complicated systems.</p>
-  <a href="about.html" class="btn btn--cta">Get to know me</a>
-</section>
-
-<section class="works" id="work">
-  <h2 class="works__title">Selected Works</h2>
-  <div class="works__grid">
-
-    <div class="card-wrap">
-      <article class="card">
-        <div class="card__image-wrap">
-          <img class="card__image" src="assets/card-passport.svg" alt="Youth and Passports project cover">
-        </div>
-        <div class="card__body">
-          <span class="card__tag">UX Research</span>
-          <p class="card__desc">Transforming the Passport Application Experience for Young Adults</p>
-          <a href="youth-passports-case-study.html" class="card__btn">View Project</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="card-wrap">
-      <article class="card">
-        <div class="card__image-wrap">
-          <img class="card__image" src="assets/card-childcare.svg" alt="Child Care App project cover">
-        </div>
-        <div class="card__body">
-          <span class="card__tag">UX Design</span>
-          <p class="card__desc">Designing a Child Care Platform to Support Educators and Casual Staff</p>
-          <a href="ortus-child-care-app.html" class="card__btn">View Project</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="card-wrap">
-      <article class="card card--compact">
-        <div class="card__image-wrap">
-          <img class="card__image" src="assets/card-career.svg" alt="Career Uncertainty project cover">
-        </div>
-        <div class="card__body">
-          <span class="card__tag">UX Research</span>
-          <p class="card__desc">Addressing career-path uncertainty through applied research.</p>
-          <a href="career-service.html" class="card__btn">View Project</a>
-        </div>
-      </article>
-    </div>
-
+  <div class="ortus-stats__item">
+    <img src="assets/ortus/icon-institution.svg" alt="">
+    <div><span class="ortus-stats__label">Institution</span><span class="ortus-stats__value">Ottawa Catholic Child care</span></div>
   </div>
-</section>
+  <div class="ortus-stats__item">
+    <img src="assets/ortus/icon-timeline.svg" alt="">
+    <div><span class="ortus-stats__label">Timeline</span><span class="ortus-stats__value">7 Weeks</span></div>
+  </div>
+  <div class="ortus-stats__item">
+    <img src="assets/ortus/icon-team.svg" alt="">
+    <div><span class="ortus-stats__label">Team</span><span class="ortus-stats__value">Solo project, mentor feedback</span></div>
+  </div>
+  <div class="ortus-stats__item">
+    <img src="assets/ortus/icon-audience.svg" alt="">
+    <div><span class="ortus-stats__label">Target audience</span><span class="ortus-stats__value">Educators<br>Casual Staff</span></div>
+  </div>
+</div>
+
+<main class="ortus-content">
+
+  <section class="ortus-title">
+    <div class="ortus-title__eyebrow-row">
+      <span class="ortus-eyebrow">UX Design Case Study</span>
+      <img src="assets/ortus/title-underline.svg" alt="" class="ortus-eyebrow__rule">
+    </div>
+    <h1>Designing a Human-Centered App for Child Care Educators, Assistance staff and guardians.</h1>
+  </section>
+
+  <section class="ortus-overview">
+    <h2>Identifying the opportunity</h2>
+    <p>I worked at an Early Learning Center as a casual staff for over 2 years which gave me first-hand exposure to the problem. Many of tasks handled by one staff is managed through fragmented and manual systems, increasing cognitive load and mistakes.<br><br>Over three weeks I ran a structured research to validate and expand on it.</p>
+
+    <div class="research-grid">
+      <div class="research-card">
+        <img src="assets/ortus/icon-survey.svg" alt="">
+        <span class="research-card__label">Survey</span>
+        <p>Screened ECE staff, ranking daily pain points.</p>
+      </div>
+      <div class="research-card">
+        <img src="assets/ortus/icon-interview.svg" alt="">
+        <span class="research-card__label">Contextual interviews</span>
+        <p>Casual sessions with staff in two centres.</p>
+      </div>
+      <div class="research-card">
+        <img src="assets/ortus/icon-analysis.svg" alt="">
+        <span class="research-card__label">Analysis</span>
+        <p>Synthesized interview notes into four recurring themes.</p>
+      </div>
+    </div>
+
+    <p class="ortus-lead-in">Ortus is a mobile-first application designed to support educators and caregivers centralized on....</p>
+
+    <div class="feat-grid">
+      <div class="feat-card">
+        <img class="feat-card__badge" src="assets/ortus/badge-1.svg" alt="">
+        <h3>Centralized Child Information</h3>
+        <p>Essential details such as allergies, accessibility needs, and personal preferences</p>
+      </div>
+      <div class="feat-card">
+        <img class="feat-card__badge" src="assets/ortus/badge-2.svg" alt="">
+        <h3>Staff scheduling and Coordination</h3>
+        <p>Centralized scheduling, attendance tracking, and real-time updates that help educators and casual staff manage shifts</p>
+      </div>
+      <div class="feat-card">
+        <img class="feat-card__badge" src="assets/ortus/badge-3.svg" alt="">
+        <h3>Training, Compliance &amp; Accountability</h3>
+        <p>One unified space for training materials, compliance documentation, and digital sign-in/out.</p>
+      </div>
+      <div class="feat-card">
+        <img class="feat-card__badge" src="assets/ortus/badge-4.svg" alt="">
+        <h3>Attendance and activity logging</h3>
+        <p>Simple check-ins and activity records that help educators track each child's day to ensure accurate records, and reduced paperwork.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ortus-objective">
+    <h2>Project Objective</h2>
+    <p>Based on the insight and information I decided to build a mobile first app initially for Educators and Casual staff keeping the goal of</p>
+
+    <div class="audience-card">
+      <div class="audience-card__illus-wrap"><img class="audience-card__illus" src="assets/ortus/illus-educators.svg" alt="" style="height:187.961px"></div>
+      <div class="audience-card__body audience-card__body--lg">
+        <h3>For Educators</h3>
+        <img class="audience-card__rule" src="assets/ortus/divider-small.svg" alt="">
+        <ul>
+          <li>Reduce cognitive load during fast-paced shifts</li>
+          <li>Provide instant access to critical child information</li>
+          <li>Support both individual accountability and team collaboration</li>
+          <li>Enable quick absence reporting and open shifts to casual staff</li>
+          <li>Allow fast, on-the-go logging of attendance, activities, and incidents</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="audience-card">
+      <div class="audience-card__illus-wrap"><img class="audience-card__illus" src="assets/ortus/illus-casual.png" alt="" style="height:184.096px"></div>
+      <div class="audience-card__body">
+        <h3>For Casual Staff</h3>
+        <img class="audience-card__rule" src="assets/ortus/divider-small.svg" alt="">
+        <ul>
+          <li>Help staff quickly familiarize themselves with new children</li>
+          <li>Enable easy communication and support from assigned educators</li>
+          <li>Simplify opting into available volunteer shifts</li>
+          <li>Centralize required training and compliance materials in one platform</li>
+          <li>Allow digital sign-in and sign-out directly through the app</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="audience-card">
+      <div class="audience-card__illus-wrap"><img class="audience-card__illus" src="assets/ortus/illus-family-1.svg" alt="" style="height:161px"></div>
+      <div class="audience-card__body">
+        <h3>Long term Plan</h3>
+        <img class="audience-card__rule" src="assets/ortus/divider-small.svg" alt="">
+        <ul>
+          <li>To extent the apps usability to parents and guardians</li>
+          <li>Enable easy Validation and sign in and sign out</li>
+          <li>Alert system for major changes or events</li>
+          <li>Real time update on their children</li>
+          <li>Efficient and better mode of communication</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ortus-flow">
+    <img class="flow-diagram" src="assets/ortus/user-flow-diagram.png" alt="User flow diagram: Start leads to an account check, branching to Log In or Sign Up, both merging into the Dashboard, which splits into Child Care, Staff, Class List, and Others, each expanding into their own sub-screens.">
+  </section>
+
+  <section class="ortus-solve">
+    <div class="solve-grid">
+      <div class="solve-text">
+        <h2>One app stop for all, ECE needs</h2>
+        <p>Ortus is a mobile first platform designed for early Learning centers. it helps educators manage daily tasks, stay inform, and focus on what matters most</p>
+
+        <div class="solve-heading-row">
+          <img src="assets/ortus/icon-underline.svg" alt="">
+          <h3>Problem's Ortus Solve</h3>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card__head"><span class="problem-card__num">1.</span><h4>Manual Coordination</h4></div>
+          <p>Attendance, activities, and incident reporting are repetitive and manual.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__head"><span class="problem-card__num">2.</span><h4>Information Fragmentation</h4></div>
+          <p>Critical child information is scattered across paper file and multiple tools, making it hard to access quickly.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__head"><span class="problem-card__num">3.</span><h4>Communication gaps</h4></div>
+          <p>Shift handovers and updates often happened verbally, leading to mistakes and missing out details.</p>
+        </div>
+      </div>
+
+      <div class="solve-mockup">
+        <div class="solve-mockup__frame">
+          <img src="assets/ortus/phone-hand-mockup.png" alt="Ortus app sign-in screen shown on a phone held in hand">
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-banner">
+      <div class="solution-banner__head">
+        <img src="assets/ortus/icon-underline.svg" alt="">
+        <h3>Ortus - Care more, Stress less</h3>
+      </div>
+      <p>Ortus brings educators and casual staff need into one simple and beautiful experience.</p>
+
+      <div class="solution-stats">
+        <div class="solution-stats__item">
+          <img src="assets/ortus/icon-attendance.svg" alt="">
+          <h4>Real time Attendance logs</h4>
+          <p>Track attendance and activities in real-time</p>
+        </div>
+        <div class="solution-stats__item">
+          <img src="assets/ortus/icon-workforce.svg" alt="">
+          <h4>Workforce coordination</h4>
+          <p>Manage schedules, absences and casual staff easily.</p>
+        </div>
+        <div class="solution-stats__item">
+          <img src="assets/ortus/icon-childcare-info.svg" alt="">
+          <h4>Child-care Information</h4>
+          <p>All child profiles, allergies, and details in one secure place</p>
+        </div>
+        <div class="solution-stats__item">
+          <img src="assets/ortus/icon-training.svg" alt="">
+          <h4>Training Compliance &amp; Accountability</h4>
+          <p>Keep training records up to date and ensure compliance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ortus-rationale">
+    <div class="ortus-rationale__head">
+      <h2>Design Decision Rationale</h2>
+      <img src="assets/ortus/rationale-underline.svg" alt="">
+    </div>
+
+    <div class="rationale-block">
+      <div class="rationale-col">
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-attendance-tracking.svg" alt="">
+          <div><h4>Attendance Tracking</h4><p>View the live overview of the assigned class.</p></div>
+        </div>
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-child-profiles.svg" alt="">
+          <div><h4>Child Profiles</h4><p>Access child profiles, dietary needs and preferences in one place</p></div>
+        </div>
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-alert.svg" alt="">
+          <div><h4>Alert that matters</h4><p>Stay updated on important notifications so nothing is missed</p></div>
+        </div>
+      </div>
+
+      <div class="rationale-phone"><img src="assets/ortus/mockup-1.png" alt="Ortus dashboard screen with class overview, attendance log, and reports"></div>
+
+      <div class="rationale-col">
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-quick-overview.svg" alt="">
+          <div><h4>Quick Class Overview</h4><p>Educators can see the assigned class, student count and attendance summary at a glance</p></div>
+        </div>
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-one-tap.svg" alt="">
+          <div><h4>One Tap Access</h4><p>Jump into the most important tasks with shortcuts on your home screen.</p></div>
+        </div>
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-reporting.svg" alt="">
+          <div><h4>Reporting made easy</h4><p>Create incident reports and daily logs with structured forms</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rationale-block">
+      <div class="rationale-col">
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-status.svg" alt="">
+          <div><h4>Status at a glance</h4><p>See who is present, absent or signed out instantly</p></div>
+        </div>
+        <div class="rationale-item">
+          <span class="rationale-item__round"><img src="assets/ortus/icon-roster.svg" alt=""></span>
+          <div><h4>Class roosters</h4><p>View all children in your class with their sign-in status and time</p></div>
+        </div>
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-navbar.svg" alt="">
+          <div><h4>Nav-bar</h4><p>Easy Navigation for faster access.</p></div>
+        </div>
+      </div>
+
+      <div class="rationale-phone"><img src="assets/ortus/mockup-2.png" alt="Ortus child profile screen with sign-in and attendance details"></div>
+
+      <div class="rationale-col rationale-col--right">
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-timestamped.svg" alt="">
+          <div><h4>Time stamped</h4><p>Every sign-in and sign-out is time stamped in one tap for accuracy and accountability</p></div>
+        </div>
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-tap-details.svg" alt="">
+          <div><h4>Tap for details</h4><p>View full profile and other important information of a child.</p></div>
+        </div>
+        <div class="rationale-item">
+          <img src="assets/ortus/icon-needs-glance.svg" alt="">
+          <div><h4>Needs at a glance</h4><p>Quickly identify allergies and accessibility needs through clear visual indicators</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ortus-validation">
+      <h2>Validation</h2>
+      <p>I ran moderated usability tests with 5 educators (2 lead, 3 casual) using a mid-fidelity Figma prototype..</p>
+    </div>
+
+    <div class="impact-banner">
+      <div class="impact-banner__lead">
+        <img src="assets/ortus/icon-clock-big.svg" alt="">
+        <div>
+          <h3>More time for what matters most</h3>
+          <p>Ortus helps educator reduce admin time, stay organized and provide better care every day.</p>
+        </div>
+      </div>
+      <div class="impact-banner__stats">
+        <div class="impact-stat"><img src="assets/ortus/icon-time-saved.svg" alt=""><p>15~20 mins time saved</p></div>
+        <div class="impact-stat"><img src="assets/ortus/icon-care-better.svg" alt=""><p>Care Better without stress</p></div>
+        <div class="impact-stat"><img src="assets/ortus/icon-teamwork.svg" alt=""><p>Work Together using staff chat</p></div>
+        <div class="impact-stat"><img src="assets/ortus/icon-informed.svg" alt=""><p>Stay Informed In-app alerts</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer class="contact">
   <div class="contact__box">
