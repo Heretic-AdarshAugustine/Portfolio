@@ -1,0 +1,396 @@
+/* ---------- Elysian Field — Brand Identity case study ---------- */
+/* Palette and type lifted directly from the Figma frame (node 1136:147):
+   a coastal-resort brand identity, distinct from the portfolio's own
+   accent tokens by design — this page shows the client's visual system,
+   not the portfolio's. */
+
+.elysian-page {
+  --ej-canvas: #f6f3ed;
+  --ej-ink: #17343d;
+  --ej-ink-deep: #0a2a2e;
+  --ej-gold: #ba8e6b;
+  background: var(--ej-canvas);
+}
+
+.elysian-page .nav {
+  background: rgba(246, 243, 237, 0.8);
+}
+
+.elysian-page .nav.is-scrolled {
+  background: rgba(246, 243, 237, 0.95);
+}
+
+.elysian-hero {
+  width: 100%;
+  aspect-ratio: 1200 / 659.36;
+  overflow: hidden;
+}
+
+.elysian-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.elysian-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 55px;
+  padding: 55px 24px 0;
+}
+
+.elysian-content > * {
+  width: 100%;
+  max-width: 945px;
+}
+
+.elysian-page h1,
+.elysian-page h2,
+.elysian-page h3,
+.elysian-page p,
+.elysian-eyebrow {
+  font-family: 'Merriweather', serif;
+  margin: 0;
+}
+
+.elysian-page h1 {
+  color: var(--ej-ink);
+  font-weight: 400;
+  font-size: clamp(28px, 22px + 2vw, 48px);
+  line-height: 1.4;
+}
+
+.elysian-eyebrow {
+  color: var(--ej-ink);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+/* ---------- Intro: brief + requirements ---------- */
+
+.elysian-intro {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.elysian-intro__brief {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.elysian-intro__brief p {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.96;
+  color: #000;
+}
+
+.elysian-intro__divider {
+  align-self: stretch;
+  width: 1px;
+  background: rgba(23, 52, 61, 0.2);
+  flex-shrink: 0;
+}
+
+.elysian-intro__requirements {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.elysian-intro__requirements > p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.6;
+  color: #000;
+}
+
+.elysian-requirements-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.elysian-requirements-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.elysian-requirements-list img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.elysian-requirements-list span {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* ---------- Competitive landscape ---------- */
+
+.elysian-competitive {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.elysian-logos {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.elysian-logos__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.elysian-logos img {
+  height: 84px;
+  width: auto;
+  object-fit: contain;
+}
+
+.elysian-logos__accent {
+  height: 8px !important;
+  margin-top: 0;
+}
+
+.elysian-photos {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.elysian-photos img {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 233px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ---------- Inspiration ---------- */
+
+.elysian-inspiration {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.elysian-inspiration__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.elysian-inspiration__intro p {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.96;
+  color: #000;
+}
+
+.elysian-inspiration-icons {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.elysian-inspiration-icons img {
+  height: 151px;
+  width: auto;
+}
+
+.elysian-moodboard {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.elysian-wave-divider {
+  width: 100%;
+  display: block;
+}
+
+/* ---------- Logo exploration ---------- */
+
+.elysian-full-img {
+  width: 100%;
+  display: block;
+}
+
+.elysian-mockups {
+  background: #fff;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.elysian-mockups img {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Outcome + reflection ---------- */
+
+.elysian-outcome {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  color: var(--ej-ink-deep);
+}
+
+.elysian-outcome__summary {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.elysian-outcome__summary h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.elysian-outcome__summary p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.elysian-outcome__checks {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.elysian-outcome__checks h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.elysian-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.elysian-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.elysian-checklist img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.elysian-reflection {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.elysian-reflection__text {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--ej-ink-deep);
+}
+
+.elysian-reflection__text h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.elysian-reflection__text p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.579;
+}
+
+.elysian-reflection__img {
+  flex: 1 1 300px;
+  aspect-ratio: 465 / 271;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ---------- Closing quote band ---------- */
+
+.elysian-quote {
+  background: var(--ej-ink-deep);
+  width: 100%;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.elysian-quote img {
+  width: 40px;
+  height: auto;
+}
+
+.elysian-quote p {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--ej-gold);
+  max-width: 650px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .elysian-intro { flex-direction: column; gap: 32px; }
+  .elysian-intro__divider { display: none; }
+  .elysian-logos { gap: 40px; }
+  .elysian-photos { flex-direction: column; }
+  .elysian-photos img { height: auto; aspect-ratio: 4 / 3; }
+  .elysian-inspiration-icons { gap: 24px; }
+  .elysian-inspiration-icons img { height: 110px; }
+  .elysian-mockups { flex-direction: column; }
+  .elysian-outcome { flex-direction: column; }
+}
