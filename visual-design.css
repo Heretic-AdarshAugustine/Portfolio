@@ -1,0 +1,434 @@
+/* ---------- Visual Design page ---------- */
+/* Companion stylesheet for visual-design.html. Reuses the shared design
+   tokens defined in styles.css (--ink, --canvas, --surface, --sky, --amber,
+   --lilac, --coral, --font-display, --font-body, --r-card) so this page
+   reads as part of the same site rather than a one-off. */
+
+.vd-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 80px 0;
+  text-align: center;
+}
+
+.vd-hero__eyebrow {
+  display: inline-block;
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.vd-hero__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(28px, 20px + 2.4vw, 44px);
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+
+.vd-hero__subtitle {
+  font-size: clamp(16px, 13px + 0.8vw, 20px);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 60ch;
+}
+
+/* ---------- Section shell ---------- */
+
+.vd-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 80px;
+}
+
+.vd-section__head {
+  margin-bottom: 28px;
+  max-width: 70ch;
+}
+
+.vd-section__eyebrow {
+  display: block;
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.vd-section__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(22px, 18px + 1vw, 30px);
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.vd-section__intro {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Generic project card ---------- */
+
+.vd-card {
+  background: var(--surface);
+  border-radius: var(--r-card);
+  padding: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vd-card__frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--r-image);
+  overflow: hidden;
+  background: var(--canvas);
+  cursor: zoom-in;
+  border: 0;
+  padding: 0;
+  transition: box-shadow 0.2s ease;
+}
+
+.vd-card__frame:hover,
+.vd-card__frame:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+
+.vd-card__frame:focus-visible { outline: none; }
+
+/* object-fit: cover — thumbnails fill the card edge to edge with no
+   letterboxing. Every image is one click away from the lightbox at full
+   size and uncropped, so the thumbnail doesn't need to show the whole
+   thing; it just needs to fill the space cleanly. */
+
+.vd-card__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.vd-card__body { padding: 0 8px 8px; }
+
+/* Clamped to a fixed number of lines so every card in a stretched grid
+   ends up the same height regardless of how long its title/caption is —
+   that's what keeps rows lined up edge to edge. */
+
+.vd-card__title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin: 0 0 6px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.vd-card__caption {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.vd-card__caption a {
+  color: var(--ink);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.vd-card__tag {
+  display: inline-block;
+  align-self: flex-start;
+  margin: 0 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: rgba(245, 166, 35, 0.18);
+  color: var(--ink);
+}
+
+/* ---------- Social Impact Campaigns ---------- */
+
+.vd-campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.vd-campaign-grid .vd-card { height: 100%; }
+
+/* The blue/green pair fills one full-size frame (same 3/4 ratio as
+   every other card here) and swaps between the two colorways via a
+   small carousel — one shown at full size, the other one arrow/dot
+   click away, instead of splitting the frame and shrinking both. */
+
+.vd-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--r-image);
+  overflow: hidden;
+  background: var(--canvas);
+}
+
+.vd-carousel .vd-card__frame {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+  display: none;
+}
+
+.vd-carousel .vd-card__frame.is-active { display: block; }
+
+.vd-carousel__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.vd-carousel:hover .vd-carousel__nav,
+.vd-carousel__nav:focus-visible {
+  opacity: 1;
+}
+
+.vd-carousel__nav:hover { background: #fff; }
+.vd-carousel__nav--prev { left: 8px; }
+.vd-carousel__nav--next { right: 8px; }
+
+.vd-carousel__dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.vd-carousel__dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+
+.vd-carousel__dot.is-active { background: #fff; }
+
+@media (max-width: 600px) {
+  .vd-carousel__nav { opacity: 1; }
+}
+
+/* ---------- Simple grids ---------- */
+
+.vd-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.vd-grid-2 .vd-card { height: 100%; }
+
+/* ---------- Concept work ---------- */
+
+.vd-concept {
+  max-width: 420px;
+}
+
+/* ---------- Motion (click-to-play) ---------- */
+
+.vd-motion-wrap { max-width: 640px; }
+
+.vd-video-card { background: var(--surface); border-radius: var(--r-card); padding: 12px; box-shadow: var(--shadow); }
+
+/* Same carousel shell as the poster pair, just widescreen — the reel and
+   the explainer sample share this one slot instead of sitting in two
+   separate cards. */
+
+.vd-carousel--video { aspect-ratio: 16 / 9; background: var(--ink); }
+
+.vd-carousel--video .vd-video-card__frame {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+  display: none;
+}
+
+.vd-carousel--video .vd-video-card__frame.is-active { display: block; }
+
+.vd-video-card__frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.vd-video-card__frame img,
+.vd-video-card__frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vd-video-card__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(43, 42, 41, 0.28);
+  transition: background 0.2s ease;
+}
+
+.vd-video-card__frame:hover .vd-video-card__play { background: rgba(43, 42, 41, 0.42); }
+
+.vd-video-card__play svg {
+  width: 64px;
+  height: 64px;
+  color: #fff;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.vd-video-card__frame.is-playing .vd-video-card__play { display: none; }
+
+.vd-video-card__body { padding: 12px 8px 4px; }
+
+/* ---------- Studies (de-emphasized) ---------- */
+
+.vd-studies {
+  border-top: var(--hairline);
+  padding-top: 40px;
+  margin-top: 8px;
+}
+
+.vd-studies__note {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin: 0 0 20px;
+}
+
+.vd-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  max-width: 640px;
+  align-items: stretch;
+}
+
+.vd-studies-grid .vd-card {
+  box-shadow: none;
+  border: var(--hairline);
+  padding: 8px;
+  height: 100%;
+}
+
+.vd-studies-grid .vd-card__body { padding: 0 4px 4px; }
+.vd-studies-grid .vd-card__title { font-size: 0.9rem; }
+.vd-studies-grid .vd-card__caption { font-size: 0.82rem; }
+
+@media (max-width: 960px) {
+  .vd-hero { padding: 48px 24px 0; }
+  .vd-section { padding: 40px 24px; }
+}
+
+/* ---------- Lightbox ---------- */
+
+body.vd-lightbox-open { overflow: hidden; }
+
+.vd-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 6vh 6vw;
+  background: rgba(20, 19, 18, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.vd-lightbox.is-open { display: flex; }
+
+.vd-lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  background: var(--surface);
+}
+
+.vd-lightbox__close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.vd-lightbox__close:hover { background: #fff; transform: scale(1.06); }
+.vd-lightbox__close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+@media (max-width: 600px) {
+  .vd-lightbox { padding: 4vh 4vw; }
+  .vd-lightbox__close { top: 12px; right: 12px; width: 40px; height: 40px; }
+}
