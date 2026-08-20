@@ -208,6 +208,19 @@ button:focus-visible {
   transform: scaleX(1);
 }
 
+/* Current-page indicator — same underline the hover state already uses,
+   just left permanently on and bolded so it reads as "you are here"
+   rather than a hover flicker. */
+
+.nav__links a:not(.btn)[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.nav__links a:not(.btn)[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
 .nav__links a:active {
   transform: scale(0.94);
 }
@@ -444,6 +457,7 @@ button:focus-visible {
 .card--amber .card__tag { background: rgba(245, 166, 35, 0.18); }
 .card--lilac .card__tag { background: rgba(155, 140, 240, 0.18); }
 .card--teal .card__tag { background: rgba(23, 52, 61, 0.14); }
+.card--coral .card__tag { background: rgba(245, 139, 160, 0.22); }
 
 .card__desc {
   font-family: var(--font-body);
